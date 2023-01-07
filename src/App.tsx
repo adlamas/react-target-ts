@@ -2,22 +2,15 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import appStoreIcon from '../src/assets/images/appstore.png';
+import facebookIcon from '../src/assets/images/Facebook.png';
+import i6Icon from '../src/assets/images/i6.png';
+import twitterIcon from '../src/assets/images/Twitter.png';
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
