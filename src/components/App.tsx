@@ -21,7 +21,7 @@ function App() {
             </div>
             <div className="input-section">
               <form>
-                <p className="input-text">SIGN UP</p>
+                <p className="input-title">SIGN UP</p>
 
                 <div className="input-element">
                   <label htmlFor="name">NAME</label>
@@ -51,16 +51,20 @@ function App() {
                 <div className="input-element">
                   <input type="submit" name="sign-up" value="SIGN UP" />
                 </div>
+
+                <div className="sign-in-section">
+                  <span className='sign-in-text' >SIGN IN</span>
+                </div>
               </form>
             </div>
           </div>
           <div className="right-side">
             <div className='right-image'>
-              <div className='image'><img src={i6Icon} alt="i6"/></div>
-              <div className='image'><img src={appStoreIcon} alt="appstore"/></div>
+              <div className='image principal-image'><img src={i6Icon} alt="i6"/></div>
+              <div className='image'><img src={appStoreIcon} alt="appstore" /></div>
               <div className='image'>
-                <img src={facebookIcon} alt="facebook"/>
-                <img src={twitterIcon} alt="twitter"/>
+                <img src={facebookIcon} alt="facebook" className="social-icon"/>
+                <img src={twitterIcon} alt="twitter" className="social-icon"/>
               </div>
             </div>
           </div>
