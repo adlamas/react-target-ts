@@ -1,0 +1,13 @@
+.main-section {
+  display: flex;
+  height: 100vh;
+}
+
+.right-side {
+  background-color: #F2F2F2;
+  width: 50%;
+}
+.left-side {
+  background-color: #2FBCF7;
+  width: 50%;
+}
