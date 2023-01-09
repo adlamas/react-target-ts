@@ -21,3 +21,14 @@
   display: flex;
   justify-content: center;
 }
+
+.input-text {
+  text-align: center;
+}
+
+.input-element {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: .4em 0 .4em 0;
+}

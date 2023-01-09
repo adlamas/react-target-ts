@@ -17,11 +17,35 @@ function App() {
             </div>
             <div className="input-section">
               <form>
-                <p>SIGN UP</p>
+                <p className="input-text">SIGN UP</p>
 
-                <div>
-                  <input type="text">
-                  </input>
+                <div className="input-element">
+                  <label htmlFor="name">NAME</label>
+                  <input type="text" name="name" />
+                </div>
+
+                <div className="input-element">
+                  <label htmlFor="email">EMAIL</label>
+                  <input type="email" name="email" />
+                </div>
+
+                <div className="input-element">
+                  <label htmlFor="password">PASSWORD</label>
+                  <input type="password" name="password" placeholder="MIN. 6 CHARACTERS LONG" />
+                </div>
+
+                <div className="input-element">
+                  <label htmlFor="confirm-password">CONFIRM PASSWORD</label>
+                  <input type="text" name="confirm-password" />
+                </div>
+
+                <div className="input-element">
+                  <label htmlFor="gender">GENDER</label>
+                  <input type="text" name="gender" />
+                </div>
+
+                <div className="input-element">
+                  <input type="submit" name="sign-up" value="SIGN UP" />
                 </div>
               </form>
             </div>
