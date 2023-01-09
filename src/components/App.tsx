@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import '../App.css';
 
 import menuIcon from '../assets/images/menu.png'
+import i6Icon from '../assets/images/i6.png'
+import appStoreIcon from '../assets/images/appstore.png'
+import facebookIcon from '../assets/images/Facebook.png'
+import twitterIcon from '../assets/images/Twitter.png'
 
 function App() {
   return (
@@ -51,7 +55,14 @@ function App() {
             </div>
           </div>
           <div className="right-side">
-            Right
+            <div className='right-image'>
+              <div className='image'><img src={i6Icon} alt="i6"/></div>
+              <div className='image'><img src={appStoreIcon} alt="appstore"/></div>
+              <div className='image'>
+                <img src={facebookIcon} alt="facebook"/>
+                <img src={twitterIcon} alt="twitter"/>
+              </div>
+            </div>
           </div>
         </div>
       </body>

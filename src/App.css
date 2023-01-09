@@ -32,3 +32,13 @@
   text-align: center;
   margin: .4em 0 .4em 0;
 }
+
+.right-side{
+  display: flex;
+  justify-content: center;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+}
