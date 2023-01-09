@@ -2,10 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import '../App.css';
 
-import appStoreIcon from '../src/assets/images/appstore.png';
-import facebookIcon from '../src/assets/images/Facebook.png';
-import i6Icon from '../src/assets/images/i6.png';
-import twitterIcon from '../src/assets/images/Twitter.png';
+import menuIcon from '../assets/images/menu.png'
 
 function App() {
   return (
@@ -14,11 +11,23 @@ function App() {
       </header>
       <body>
         <div className="main-section">
+          <div className="left-side">
+            <div className="right-menu">
+              <img src={menuIcon} alt="menu" />
+            </div>
+            <div className="input-section">
+              <form>
+                <p>SIGN UP</p>
+
+                <div>
+                  <input type="text">
+                  </input>
+                </div>
+              </form>
+            </div>
+          </div>
           <div className="right-side">
             Right
-          </div>
-          <div className="left-side">
-            Left
           </div>
         </div>
       </body>
