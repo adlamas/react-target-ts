@@ -45,15 +45,20 @@ function App() {
 
                 <div className="input-element">
                   <label htmlFor="gender">GENDER</label>
-                  <input type="text" name="gender" />
+                  <select name="gender">
+                    <option value="select-your-gender">SELECT YOUR GENDER</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="not-to-say">Prefer not to say</option>
+                  </select>
                 </div>
 
                 <div className="input-element">
                   <input type="submit" name="sign-up" value="SIGN UP" />
                 </div>
 
-                <div className="sign-in-section">
-                  <span className='sign-in-text' >SIGN IN</span>
+                <div className="sign-in-section" >
+                  <p className='sign-in-text'>SIGN IN</p>
                 </div>
               </form>
             </div>
