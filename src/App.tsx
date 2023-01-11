@@ -1,12 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import '../App.css';
+import './App.css';
 
-import menuIcon from '../assets/images/menu.png'
-import i6Icon from '../assets/images/i6.png'
-import appStoreIcon from '../assets/images/appstore.png'
-import facebookIcon from '../assets/images/Facebook.png'
-import twitterIcon from '../assets/images/Twitter.png'
+import menu from "./assets/images/menu.png"
+import i6Icon from './assets/images/i6.png'
+import appStoreIcon from './assets/images/appstore.png'
+import facebookIcon from './assets/images/Facebook.png'
+import twitterIcon from './assets/images/Twitter.png'
 
 function App() {
   return (
@@ -14,10 +12,10 @@ function App() {
       <header className="App-header">
       </header>
       <body>
-        <div className="main-section">
-          <div className="left-side">
-            <div className="right-menu">
-              <img src={menuIcon} alt="menu" />
+        <section className="main-section">
+          <section className="main-section--left-side">
+            <div className="hamburguer-menu">
+              <img src={menu} alt="menu" />
             </div>
             <div className="input-section">
               <form>
@@ -62,8 +60,8 @@ function App() {
                 </div>
               </form>
             </div>
-          </div>
-          <div className="right-side">
+          </section>
+          <section className="main-section--right-side">
             <div className='right-image'>
               <div className='image principal-image'><img src={i6Icon} alt="i6"/></div>
               <div className='image'><img src={appStoreIcon} alt="appstore" /></div>
@@ -72,8 +70,8 @@ function App() {
                 <img src={twitterIcon} alt="twitter" className="social-icon"/>
               </div>
             </div>
-          </div>
-        </div>
+          </section>
+        </section>
       </body>
     </div>
   );

@@ -8,6 +8,15 @@
   src: url('../src/assets/fonts/OpenSans-Regular.ttf');
 }
 
+:root {
+  --right-side-bg-color: #2FBCF7;
+  --left-side-bg-color: #ffffff;
+  --label-input-color: #706b6b;
+  --submit-btn-bg-color: #000000;
+  --submit-btn-color: #FFFFFF;
+  --sign-in-border: 1px solid black;
+}
+
 body {
   margin: 0;
 }
@@ -17,17 +26,17 @@ body {
   height: 100vh;
 }
 
-.right-side {
-  background-color: #2FBCF7;
+.main-section--right-side {
+  background-color: var(--right-side-bg-color);
   width: 50%;
 }
 
-.left-side {
-  background-color: #ffffff;
+.main-section--left-side {
+  background-color: var(--left-side-bg-color);
   width: 50%;
 }
 
-.right-menu {
+.hamburguer-menu {
   margin: 2em 0 0 2em;
 }
 
@@ -55,7 +64,7 @@ body {
 .input-element > label {
   font-size: 0.7em;
   font-family: OpenSans;
-  color: #000000;
+  color: var(--label-input-color);
   font-weight: 700;
   height: 1.4em;
   letter-spacing: 0.15em;
@@ -75,8 +84,8 @@ select {
 
 input[type=submit] {
   margin-top: 1em;
-  background-color: #000000;
-  color: #FFFFFF;
+  background-color: var(--submit-btn-bg-color);
+  color: var(--submit-btn-color);
   width: 100%;
 }
 
@@ -92,7 +101,6 @@ input[type=submit] {
 }
 
 .principal-image {
-  margin-bottom: -1em;
   margin-top: 2em;
 }
 
@@ -108,7 +116,7 @@ input[type=submit] {
 }
 
 .sign-in-text {
-  border-top: 1px solid black;
+  border-top: var(--sign-in-border);
   width: 60%;
   font-weight: 500;
   font-size: .7em;
