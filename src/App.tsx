@@ -1,10 +1,10 @@
 import './App.css';
 
-import menu from "./assets/images/menu.png"
-import i6Icon from './assets/images/i6.png'
-import appStoreIcon from './assets/images/appstore.png'
-import facebookIcon from './assets/images/Facebook.png'
-import twitterIcon from './assets/images/Twitter.png'
+import menu from 'assets/images/menu.png'
+import i6Icon from 'assets/images/i6.png'
+import appStoreIcon from 'assets/images/appstore.png'
+import facebookIcon from 'assets/images/Facebook.png'
+import twitterIcon from 'assets/images/Twitter.png'
 
 function App() {
   return (
