@@ -1,4 +1,4 @@
-import './App.css';
+import 'App.css';
 
 import menu from 'assets/images/menu.png'
 import i6Icon from 'assets/images/i6.png'
@@ -6,7 +6,7 @@ import appStoreIcon from 'assets/images/appstore.png'
 import facebookIcon from 'assets/images/Facebook.png'
 import twitterIcon from 'assets/images/Twitter.png'
 
-function App() {
+function SignUp() {
   return (
     <div className="App">
       <header className="App-header">
@@ -77,4 +77,4 @@ function App() {
   );
 }
 
-export default App;
+export default SignUp;
