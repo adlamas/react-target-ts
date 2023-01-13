@@ -5,6 +5,7 @@ import SignUp from 'components/SignUp';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

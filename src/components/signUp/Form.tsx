@@ -3,7 +3,6 @@ import { Component } from 'react';
 import { render } from 'react-dom';
 import { useState } from 'react';
 
-
 export default class SignUp extends Component {
   username: string;
   email: string;
