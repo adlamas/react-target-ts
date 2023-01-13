@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Component } from 'react';
 import { render } from 'react-dom';
 import { useState } from 'react';
@@ -20,7 +20,7 @@ export default class SignUp extends Component {
     this.username = '';
   }
 
-  async sendSignUp() {
+  async sendSignUp(form: any) {
     try {
       const res = await axios.post(
         'http://localhost:3001/api/v1/users',
@@ -38,10 +38,14 @@ export default class SignUp extends Component {
           }}
         );
 
-      return res;
+      return {
+        accessToken: res.headers['access-token'],
+        client: res.headers['client'],
+        uid: res.headers['uid']
+      }
     }
-    catch(e){
-      console.log(e)
+    catch(e: any){
+      form.prepend('An error has occurred');
     }
   }
 
@@ -50,7 +54,7 @@ export default class SignUp extends Component {
       <form
         onSubmit={e => {
           e.preventDefault();
-          return this.sendSignUp();
+          return this.sendSignUp(e.target);
         }}
       >
         <p className="input-title">SIGN UP</p>
