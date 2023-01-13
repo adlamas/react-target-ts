@@ -22,7 +22,6 @@ export default class SignUp extends Component {
 
   async sendSignUp() {
     try {
-      debugger;
       const res = await axios.post(
         'http://localhost:3001/api/v1/users',
         { user:
@@ -39,7 +38,6 @@ export default class SignUp extends Component {
           }}
         );
 
-      debugger;
       return res;
     }
     catch(e){
