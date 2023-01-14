@@ -1,5 +1,3 @@
-import 'App.css';
-
 import menu from 'assets/images/menu.png'
 import SignUpForm from 'components/signUp/Form'
 import RightSection from 'components/common/RightSection'

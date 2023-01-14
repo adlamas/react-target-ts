@@ -1,0 +1,25 @@
+.right-side {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.principal-image {
+  margin-top: 2em;
+}
+
+.social-icon {
+  margin-right: .8em;
+  margin-left: .8em;
+}
+
+.sign-in-section {
+  display: flex;
+  justify-content: center;
+  margin-top: -0.7em;
+}

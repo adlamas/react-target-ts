@@ -1,34 +1,27 @@
 import axios, { AxiosError } from 'axios';
-import { Component } from 'react';
-import { render } from 'react-dom';
 import { useState } from 'react';
+import 'components/signUp/Form.css'
 
-export default class SignUp extends Component {
-  username: string;
-  email: string;
-  password: string;
-  passwordConfirmation: string;
-  gender: string;
+const Form = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setpasswordConfirmation] = useState("");
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+  const [requestError, setrequestError] = useState(false);
 
-  constructor(props: any) {
-    super(props);
-    this.email = '';
-    this.password = '';
-    this.passwordConfirmation = '';
-    this.gender = '';
-    this.username = '';
-  }
-
-  async sendSignUp(form: any) {
+  async function SignUp() {
+    debugger;
     try {
       const res = await axios.post(
         'http://localhost:3001/api/v1/users',
         { user:
           {
-            email: this.email,
-            password: this.password,
-            password_confirmation: this.passwordConfirmation,
-            gender: this.gender
+            email: email,
+            password: password,
+            password_confirmation: passwordConfirmation,
+            gender: gender,
+            username: name
           }
         },
         {
@@ -36,7 +29,8 @@ export default class SignUp extends Component {
             'Content-Type': 'application/json'
           }}
         );
-
+      
+      setrequestError(false);
       return {
         accessToken: res.headers['access-token'],
         client: res.headers['client'],
@@ -44,90 +38,91 @@ export default class SignUp extends Component {
       }
     }
     catch(e: any){
-      form.prepend('An error has occurred');
+      debugger;
+      setrequestError(true);
     }
   }
 
-  render(){
-    return (
-      <form
-        onSubmit={e => {
-          e.preventDefault();
-          return this.sendSignUp(e.target);
-        }}
-      >
-        <p className="input-title">SIGN UP</p>
+  return (
+    <form
+      onSubmit={e => {
+      e.preventDefault();
+      SignUp();
+    }}>
 
-        <div className="input-element">
-          <label htmlFor="name">NAME</label>
-          <input
-            type="text"
-            name="name"
-            onChange={e => {
-              this.username = e.target.value;
-              console.log(this.username);
-            }}
-          />
-        </div>
+      {requestError === true?
+        <p className="signup-error">An error has occurred</p>: null
+      }
+      <h1 className="input-title">SIGN UP</h1>
 
-        <div className="input-element">
-          <label htmlFor="email">EMAIL</label>
-          <input 
-            type="email"
-            name="email"
-            onChange={e => {
-              this.email = e.target.value;
-              console.log(this.email);
-            }}
-          />
-        </div>
+      <div className="input-element">
+        <label htmlFor="name">NAME</label>
+        <input
+          type="text"
+          name="name"
+          onChange={e => {
+            setName(e.target.value);
+          }}
+        />
+      </div>
 
-        <div className="input-element">
-          <label htmlFor="password">PASSWORD</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="MIN. 6 CHARACTERS LONG"
-            onChange={e => {
-              this.password = e.target.value;
-            }}
-          />
-        </div>
+      <div className="input-element">
+        <label htmlFor="email">EMAIL</label>
+        <input 
+          type="email"
+          name="email"
+          onChange={e => {
+            setEmail(e.target.value);
+          }}
+        />
+      </div>
 
-        <div className="input-element">
-          <label htmlFor="confirm-password">CONFIRM PASSWORD</label>
-          <input
-            type="password"
-            name="confirm-password"
-            onChange={e => {
-            this.passwordConfirmation = e.target.value;
-            }}
-          />
-        </div>
+      <div className="input-element">
+        <label htmlFor="password">PASSWORD</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="MIN. 6 CHARACTERS LONG"
+          onChange={e => {
+            setPassword(e.target.value);
+          }}
+        />
+      </div>
 
-        <div className="input-element">
-          <label htmlFor="gender">GENDER</label>
-          <select name="gender"
-            onChange={e => {
-            this.gender = e.target.value;
-            }}          
-          >
-            <option value="select-your-gender">SELECT YOUR GENDER</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="not-to-say">Prefer not to say</option>
-          </select>
-        </div>
+      <div className="input-element">
+        <label htmlFor="confirm-password">CONFIRM PASSWORD</label>
+        <input
+          type="password"
+          name="confirm-password"
+          onChange={e => {
+            setpasswordConfirmation(e.target.value);
+          }}
+        />
+      </div>
 
-        <div className="input-element">
-          <input type="submit" name="sign-up" value="SIGN UP" />
-        </div>
+      <div className="input-element">
+        <label htmlFor="gender">GENDER</label>
+        <select name="gender"
+          onChange={e => {
+            setGender(e.target.value);
+          }}          
+        >
+          <option value="select-your-gender">SELECT YOUR GENDER</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="not-to-say">Prefer not to say</option>
+        </select>
+      </div>
 
-        <div className="sign-in-section" >
-          <p className='sign-in-text'>SIGN IN</p>
-        </div>
-      </form>
-    )
-  }
+      <div className="input-element">
+        <input type="submit" name="sign-up" value="SIGN UP" />
+      </div>
+
+      <div className="sign-in-section" >
+        <p className='sign-in-text'>SIGN IN</p>
+      </div>
+    </form>
+  )  
 }
 
+export default Form;
