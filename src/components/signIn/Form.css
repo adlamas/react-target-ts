@@ -8,8 +8,17 @@
   src: url('../../assets/fonts/OpenSans-Regular.ttf');
 }
 
-body {
+body, .input-section {
   margin: 0;
+}
+
+.main-page-form {
+  width: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-page--title {
@@ -32,6 +41,34 @@ body {
   font-family: OpenSans;
 }
 
+.main-page--input-section {
+  margin: 2em 0 2em 0
+}
+
+.main-page--input-div {
+  display: flex;
+  flex-direction: column;
+  width: 11.3em;
+  height: 4.6em;
+  margin: .5em 0 0 0;
+}
+
+.main-page--input-div > input {
+  height: 2.8em;
+}
+
+.main-page--input-sign-in {
+  margin: 0;
+}
+
+.main-page--input-label {
+  font-family: OpenSans;
+  font-size: 0.7em;
+  line-height: 0.85em;
+  letter-spacing: 1.65px;
+  margin-bottom: 0.25em;
+}
+
 .forgot-password {
   margin: 0;
   font-size: 0.7em;
@@ -41,9 +78,17 @@ body {
 .connect-with {
   font-size: 0.75em;
   letter-spacing: 0.2em;
-  margin-top: 4.5em;
 }
 
 .connect-with a {
   text-decoration: none;
+}
+
+.sign-in-text {
+  border-top: var(--sign-in-border);
+  font-weight: 500;
+  font-size: .7em;
+  text-align: center;
+  padding-top: .7em;
+  width: 10.7em
 }

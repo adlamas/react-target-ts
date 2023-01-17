@@ -1,31 +1,20 @@
 import 'components/signUp/Form.css'
 import 'components/signIn/Form.css'
 import smiliesIcon from 'assets/images/smilies.png'
-
-import axios, { AxiosError } from 'axios';
 import { useState } from 'react';
+import Paths from 'constants/paths';
 
 
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [requestError, setrequestError] = useState(false);
-
-  async function SignIn() {
-  }
 
   return (
     <form onSubmit={e => {
       e.preventDefault();
-      SignIn();
     }}
-      className='main-form'
+      className='main-page-form'
     >
-      
-      {requestError === true?
-        <p className="signup-error">An error has occurred</p>: null
-      }
-
       <div className=''>
         <img src={smiliesIcon} alt="Two faces smiling" />
       </div>
@@ -38,38 +27,40 @@ const Form = () => {
         </h5>
       </p>     
 
-      <div className="input-element">
-        <label htmlFor="email">EMAIL</label>
-        <input style={{}}
-          type="email"
-          name="email"
-          onChange={e => {
-            setEmail(e.target.value);
-          }}
-        />
-      </div>
+      <section className='main-page--input-section'>
+        <div className="main-page--input-div">
+          <label htmlFor="email" className='main-page--input-label'>EMAIL</label>
+          <input style={{}}
+            type="email"
+            name="email"
+            onChange={e => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
 
-      <div className="input-element">
-        <label htmlFor="password">PASSWORD</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="MIN. 6 CHARACTERS LONG"
-          onChange={e => {
-            setPassword(e.target.value);
-          }}
-        />
-      </div>
+        <div className="main-page--input-div">
+          <label htmlFor="password" className='main-page--input-label'>PASSWORD</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="MIN. 6 CHARACTERS LONG"
+            onChange={e => {
+              setPassword(e.target.value);
+            }}
+          />
+        </div>
 
-      <div className="input-element">
-        <input type="submit" name="sign-up" value="SIGN IN" />
-      </div>
+        <div className="main-page--input-div main-page--input-sign-in">
+          <input type="submit" name="sign-up" value="SIGN IN" />
+        </div>
 
-      <h6 className="forgot-password">Forgot your password?</h6>
+        <h6 className="forgot-password">Forgot your password?</h6>
+      </section>
       
       <h5 className="connect-with">CONNECT WITH FACEBOOK</h5>
-      <div className="sign-in-section" >
-        <a href="/signUp"><p className='sign-in-text'>SIGN UP</p></a>
+      <div className="sign-in-section">
+        <a href={Paths.SIGN_UP}><p className='sign-in-text'>SIGN UP</p></a>
       </div>
     </form>
   )  
