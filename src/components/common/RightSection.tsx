@@ -5,7 +5,7 @@ import appStoreIcon from 'assets/images/appstore.png'
 import facebookIcon from 'assets/images/Facebook.png'
 import twitterIcon from 'assets/images/Twitter.png'
 
-function rightSection() {
+const rightSection = () => {
   return(
     <section className="main-section--right-side">
       <div className='right-image'>

@@ -1,27 +1,31 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
+import Endpoints from 'constants/endpoints'
 import { useState } from 'react';
 import 'components/signUp/Form.css'
 
 const Form = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setpasswordConfirmation] = useState("");
-  const [name, setName] = useState("");
-  const [gender, setGender] = useState("");
-  const [requestError, setrequestError] = useState(false);
+  const [ formValues, setFormValues ] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    name: '',
+    gender: '',
+  })
 
-  async function SignUp() {
-    debugger;
+  const [requestError, setrequestError] = useState(false);
+  const SignUp = async () => {
+    const signUpEndpoint: string = `${process.env.REACT_APP_API_BASE_URL}/${Endpoints.USERS}`
+
     try {
       const res = await axios.post(
-        'http://localhost:3001/api/v1/users',
+        signUpEndpoint,
         { user:
           {
-            email: email,
-            password: password,
-            password_confirmation: passwordConfirmation,
-            gender: gender,
-            username: name
+            email: formValues.email,
+            password: formValues.password,
+            gender: formValues.gender,
+            password_confirmation: formValues.confirmPassword,
+            username: formValues.name
           }
         },
         {
@@ -38,7 +42,6 @@ const Form = () => {
       }
     }
     catch(e: any){
-      debugger;
       setrequestError(true);
     }
   }
@@ -50,9 +53,8 @@ const Form = () => {
       SignUp();
     }}>
 
-      {requestError === true?
-        <p className="signup-error">An error has occurred</p>: null
-      }
+      {requestError && <p className="signup-error">An error has occurred</p>}
+
       <h1 className="input-title">SIGN UP</h1>
 
       <div className="input-element">
@@ -61,7 +63,7 @@ const Form = () => {
           type="text"
           name="name"
           onChange={e => {
-            setName(e.target.value);
+              setFormValues({...formValues, [e.target.name]: e.target.value })
           }}
         />
       </div>
@@ -72,8 +74,8 @@ const Form = () => {
           type="email"
           name="email"
           onChange={e => {
-            setEmail(e.target.value);
-          }}
+            setFormValues({...formValues, [e.target.name]: e.target.value })
+        }}
         />
       </div>
 
@@ -84,8 +86,8 @@ const Form = () => {
           name="password"
           placeholder="MIN. 6 CHARACTERS LONG"
           onChange={e => {
-            setPassword(e.target.value);
-          }}
+            setFormValues({...formValues, [e.target.name]: e.target.value })
+        }}
         />
       </div>
 
@@ -93,10 +95,10 @@ const Form = () => {
         <label htmlFor="confirm-password">CONFIRM PASSWORD</label>
         <input
           type="password"
-          name="confirm-password"
+          name="confirmPassword"
           onChange={e => {
-            setpasswordConfirmation(e.target.value);
-          }}
+            setFormValues({...formValues, [e.target.name]: e.target.value })
+        }}
         />
       </div>
 
@@ -104,8 +106,8 @@ const Form = () => {
         <label htmlFor="gender">GENDER</label>
         <select name="gender"
           onChange={e => {
-            setGender(e.target.value);
-          }}          
+            setFormValues({...formValues, [e.target.name]: e.target.value })
+        }}        
         >
           <option value="select-your-gender">SELECT YOUR GENDER</option>
           <option value="male">Male</option>
