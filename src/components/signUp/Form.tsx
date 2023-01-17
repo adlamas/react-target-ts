@@ -1,6 +1,7 @@
 import axios, { AxiosError } from 'axios';
 import { useState } from 'react';
 import 'components/signUp/Form.css'
+import { redirect, useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [email, setEmail] = useState("");
@@ -9,9 +10,9 @@ const Form = () => {
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   const [requestError, setrequestError] = useState(false);
+  const nav = useNavigate();
 
   async function SignUp() {
-    debugger;
     try {
       const res = await axios.post(
         'http://localhost:3001/api/v1/users',
@@ -31,14 +32,14 @@ const Form = () => {
         );
       
       setrequestError(false);
-      return {
-        accessToken: res.headers['access-token'],
-        client: res.headers['client'],
-        uid: res.headers['uid']
-      }
+      //return {
+      //  accessToken: res.headers['access-token'],
+      //  client: res.headers['client'],
+      //  uid: res.headers['uid']
+      //}
+      nav("/");
     }
     catch(e: any){
-      debugger;
       setrequestError(true);
     }
   }

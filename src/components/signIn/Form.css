@@ -1,0 +1,49 @@
+@font-face {
+  font-family: OpenSansBold;
+  src: url('../../assets/fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url('../../assets/fonts/OpenSans-Regular.ttf');
+}
+
+body {
+  margin: 0;
+}
+
+.main-page--title {
+  font-size: 1.25em;
+  font-family: OpenSansBold;
+}
+
+.main-page--subtitle {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-family: OpenSans;
+}
+
+.main-page--description {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.95em;
+  font-family: OpenSans;
+}
+
+.forgot-password {
+  margin: 0;
+  font-size: 0.7em;
+  font-family: OpenSans;
+}
+
+.connect-with {
+  font-size: 0.75em;
+  letter-spacing: 0.2em;
+  margin-top: 4.5em;
+}
+
+.connect-with a {
+  text-decoration: none;
+}
