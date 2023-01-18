@@ -8,6 +8,8 @@
   src: url('../../assets/fonts/OpenSans-Regular.ttf');
 }
 
+
+
 :root {
   --right-side-bg-color: #2FBCF7;
   --left-side-bg-color: #ffffff;
@@ -18,13 +20,18 @@
   --sign-in-border: 1px solid black;
 }
 
-body {
-  margin: 0;
-}
-
 .main-section {
   display: flex;
   height: 100vh;
+}
+
+.main-form {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-section--right-side {
@@ -62,7 +69,7 @@ body {
 .input-element {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
   margin: .5em 0 .9em 0;
 }
 
@@ -79,7 +86,7 @@ body {
   height: 2.78em;
   width: 13.5em;
   font-size: 0.65em;
-  text-align: center;
+  margin: 0;
 }
 
 select {
@@ -91,12 +98,10 @@ input[type=submit] {
   margin-top: 1em;
   background-color: var(--submit-btn-bg-color);
   color: var(--submit-btn-color);
-  width: 100%;
 }
 
 .sign-in-text {
   border-top: var(--sign-in-border);
-  width: 60%;
   font-weight: 500;
   font-size: .7em;
   text-align: center;

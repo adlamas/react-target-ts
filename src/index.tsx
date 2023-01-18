@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import SignUp from 'components/SignUp';
+import SignIn from 'components/SignIn';
 import reportWebVitals from './reportWebVitals';
 import Paths from 'constants/paths';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        <Route path={Paths.ROOT} element={<SignIn />} />
         <Route path={Paths.SIGN_UP} element={<SignUp />} />
       </Routes>
     </BrowserRouter>

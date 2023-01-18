@@ -2,6 +2,8 @@ import axios from 'axios';
 import Endpoints from 'constants/endpoints'
 import { useState } from 'react';
 import 'components/signUp/Form.css'
+import { redirect, useNavigate } from "react-router-dom";
+import Paths from 'constants/paths';
 
 const Form = () => {
   const [ formValues, setFormValues ] = useState({
@@ -13,6 +15,8 @@ const Form = () => {
   })
 
   const [requestError, setrequestError] = useState(false);
+  const nav = useNavigate();
+
   const SignUp = async () => {
     const signUpEndpoint: string = `${process.env.REACT_APP_API_BASE_URL}/${Endpoints.USERS}`
 
@@ -35,11 +39,7 @@ const Form = () => {
         );
       
       setrequestError(false);
-      return {
-        accessToken: res.headers['access-token'],
-        client: res.headers['client'],
-        uid: res.headers['uid']
-      }
+      nav(Paths.ROOT);
     }
     catch(e: any){
       setrequestError(true);
