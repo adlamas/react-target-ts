@@ -69,22 +69,22 @@ body, .input-section {
   margin-bottom: 0.25em;
 }
 
-.forgot-password {
+.main-page--forgot-password {
   margin: 0;
   font-size: 0.7em;
   font-family: OpenSans;
 }
 
-.connect-with {
+.main-page--connect-with {
   font-size: 0.75em;
   letter-spacing: 0.2em;
 }
 
-.connect-with a {
+.main-page--connect-with a {
   text-decoration: none;
 }
 
-.sign-in-text {
+.main-page--sign-in-text {
   border-top: var(--sign-in-border);
   font-weight: 500;
   font-size: .7em;

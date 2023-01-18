@@ -15,7 +15,7 @@ const Form = () => {
     }}
       className='main-page-form'
     >
-      <div className=''>
+      <div>
         <img src={smiliesIcon} alt="Two faces smiling" />
       </div>
       <p>
@@ -30,7 +30,7 @@ const Form = () => {
       <section className='main-page--input-section'>
         <div className="main-page--input-div">
           <label htmlFor="email" className='main-page--input-label'>EMAIL</label>
-          <input style={{}}
+          <input
             type="email"
             name="email"
             onChange={e => {
@@ -55,12 +55,12 @@ const Form = () => {
           <input type="submit" name="sign-up" value="SIGN IN" />
         </div>
 
-        <h6 className="forgot-password">Forgot your password?</h6>
+        <h6 className="main-page--forgot-password">Forgot your password?</h6>
       </section>
       
-      <h5 className="connect-with">CONNECT WITH FACEBOOK</h5>
-      <div className="sign-in-section">
-        <a href={Paths.SIGN_UP}><p className='sign-in-text'>SIGN UP</p></a>
+      <h5 className="main-page--connect-with">CONNECT WITH FACEBOOK</h5>
+      <div className="main-page--sign-in-section">
+        <a href={Paths.SIGN_UP}><p className='main-page--sign-in-text'>SIGN UP</p></a>
       </div>
     </form>
   )  

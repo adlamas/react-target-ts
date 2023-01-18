@@ -3,6 +3,7 @@ import Endpoints from 'constants/endpoints'
 import { useState } from 'react';
 import 'components/signUp/Form.css'
 import { redirect, useNavigate } from "react-router-dom";
+import Paths from 'constants/paths';
 
 const Form = () => {
   const [ formValues, setFormValues ] = useState({
@@ -38,12 +39,7 @@ const Form = () => {
         );
       
       setrequestError(false);
-      //return {
-      //  accessToken: res.headers['access-token'],
-      //  client: res.headers['client'],
-      //  uid: res.headers['uid']
-      //}
-      nav("/");
+      nav(Paths.ROOT);
     }
     catch(e: any){
       setrequestError(true);

@@ -8,6 +8,8 @@
   src: url('../../assets/fonts/OpenSans-Regular.ttf');
 }
 
+
+
 :root {
   --right-side-bg-color: #2FBCF7;
   --left-side-bg-color: #ffffff;
@@ -16,10 +18,6 @@
   --submit-btn-color: #FFFFFF;
   --error-color: #red;
   --sign-in-border: 1px solid black;
-}
-
-body {
-  margin: 0;
 }
 
 .main-section {

@@ -2,7 +2,7 @@ import menu from 'assets/images/menu.png'
 import SignInForm from 'components/signIn/Form'
 import RightSection from 'components/common/RightSection'
 
-function SignIn() {
+const SignIn = () => {
   return (
     <div className="App">
       <header className="App-header">
