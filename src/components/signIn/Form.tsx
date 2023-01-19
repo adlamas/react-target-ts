@@ -1,23 +1,58 @@
 import 'components/signUp/Form.css'
 import 'components/signIn/Form.css'
 import smiliesIcon from 'assets/images/smilies.png'
-import { useState } from 'react';
+import axios from 'axios';
 import Paths from 'constants/paths';
-
+import Endpoints from 'constants/endpoints';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [requestError, setrequestError] = useState(false);
+  const nav = useNavigate();
+
+  const signIn = async () => {
+    const signInEndpoint: string = await `${process.env.REACT_APP_API_BASE_URL}/api/v1${Endpoints.SIGN_IN}`;
+
+    try {
+      const res = await axios.post(
+        signInEndpoint,
+        { user:
+          {
+            email: email,
+            password: password
+          }
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }}
+        );
+      
+      debugger;
+      sessionStorage.setItem('key', 'value');
+      setrequestError(false);
+      nav(Paths.ROOT);
+    }
+    catch(error: any){
+      setrequestError(true);
+    }
+  }
 
   return (
     <form onSubmit={e => {
       e.preventDefault();
+      signIn();
     }}
       className='main-page-form'
     >
       <div>
         <img src={smiliesIcon} alt="Two faces smiling" />
       </div>
+
+      {requestError && <p className="main-page--request-error">An error has occurred</p>}
       <p>
         <h1 className="main-page--title">TARGET MVD</h1>
         <h4 className="main-page--subtitle">Find people near you & Connect </h4>

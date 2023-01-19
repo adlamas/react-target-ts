@@ -92,3 +92,7 @@ body, .input-section {
   padding-top: .7em;
   width: 10.7em
 }
+
+.main-page--request-error {
+  color: red
+}

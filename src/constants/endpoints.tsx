@@ -1,5 +1,6 @@
 enum Endpoints {
-  USERS = '/users'
+  USERS = '/users',
+  SIGN_IN = '/users/sign_in'
 }
 
 export default Endpoints;
