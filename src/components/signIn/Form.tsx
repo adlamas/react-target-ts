@@ -1,11 +1,15 @@
 import 'components/signUp/Form.css'
 import 'components/signIn/Form.css'
+
 import smiliesIcon from 'assets/images/smilies.png'
 import axios from 'axios';
 import Paths from 'constants/paths';
 import Endpoints from 'constants/endpoints';
+import storeAPITokens from 'services/signIn/SignInHeaders';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 
 const Form = () => {
   const [email, setEmail] = useState("");
@@ -27,12 +31,12 @@ const Form = () => {
         },
         {
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': '*/*'
           }}
         );
       
-      debugger;
-      sessionStorage.setItem('key', 'value');
+      storeAPITokens(res);
       setrequestError(false);
       nav(Paths.ROOT);
     }
