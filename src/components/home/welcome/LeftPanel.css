@@ -1,0 +1,60 @@
+
+.home--base-section {
+  width: 80%;
+  flex-direction: column;
+  margin-top: 2em;
+  font-family: OpenSans;
+}
+
+.home--principal-icon-row {
+  display: flex;
+  justify-content: center;
+}
+
+.home--principal-icon {
+  width: 50%
+}
+
+.home--title-text {
+  text-align: center;
+  margin-top: 1.1em;
+  font-size: 1.2em;
+  letter-spacing: 0.25em;
+}
+
+.home--subtitle-text {
+  text-align: center;
+  margin-top: 1.1em;
+  font-size: 1em;
+}
+
+.home--parragraphs-section {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.home--parragraph-base {
+  text-align: left;
+  display: flex;
+  margin: 2em 0 2em 0;
+  line-height: 1.60em;
+  font-size: 0.9em;
+}
+
+.home--parragraph-icon {
+  margin-right: 0.2em;
+}
+
+.home--submit-btn-row {
+  text-align: center;
+}
+
+.home--submit-btn {
+  background-color: var(--submit-btn-bg-color);
+  color: var(--submit-btn-color);
+  width: 14em;
+  height: 3em;
+  text-transform: uppercase;
+  margin-top: 7em;
+  box-shadow: 0 2px 2px 0 var(--submit-btn-bg-color) ;
+}
