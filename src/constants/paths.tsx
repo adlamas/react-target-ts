@@ -1,7 +1,7 @@
 enum Paths {
   ROOT = '/',
   SIGN_UP = '/signUp',
-  WELCOME = '/welcome'
+  WELCOME = '/home/welcome'
 }
 
 export default Paths;

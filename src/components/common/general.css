@@ -1,0 +1,7 @@
+:root {
+  --skyblue-bg-color: #2FBCF7;
+  --white-pannel-bg-color: #ffffff;
+  --submit-btn-bg-color: #000000;
+  --error-message-color: #red;
+  --submit-button-border: 1px solid black;
+}
