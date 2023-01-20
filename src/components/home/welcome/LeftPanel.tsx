@@ -15,7 +15,7 @@ const leftPanel = () => {
       </div>
 
       <div className="home--title-row">
-        <p className="home--subtitle-text">Find people near you & Connect</p>
+        <p className="home--subtitle-text"><b>Find people near you & Connect</b></p>
       </div>
       
       <div className="home--parragraphs-section">
@@ -39,7 +39,9 @@ const leftPanel = () => {
       </div>
       
       <div className="home--submit-btn-row">
-        <input type='button' value='Ok, got it!' className="home--submit-btn"/>
+        <a href='#'>
+          <input type='button' value='Ok, got it!' className="home--submit-btn"/>
+        </a>
       </div>
     </div>
   )

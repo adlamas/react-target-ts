@@ -38,7 +38,7 @@ const Form = () => {
       
       storeAPITokens(res);
       setrequestError(false);
-      nav(Paths.ROOT);
+      nav(Paths.WELCOME);
     }
     catch(error: any){
       setrequestError(true);

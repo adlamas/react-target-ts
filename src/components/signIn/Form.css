@@ -84,5 +84,5 @@ body, .input-section {
 }
 
 .main-page--request-error {
-  color: red
+  color: var(--error-message-color);
 }
