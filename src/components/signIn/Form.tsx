@@ -36,7 +36,7 @@ const Form = () => {
           }}
         );
       
-      storeAPITokens(res);
+      await storeAPITokens(res);
       setrequestError(false);
       nav(Paths.WELCOME);
     }
