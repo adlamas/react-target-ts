@@ -5,6 +5,7 @@
   --submit-btn-color: #ffffff;
   --error-message-color: #red;
   --submit-button-border: 1px solid black;
+  --left-panel-box-shadow: 3px 10px 1px lightgrey;
 }
 
 @font-face {
