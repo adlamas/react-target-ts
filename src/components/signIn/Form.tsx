@@ -1,23 +1,44 @@
 import 'components/signUp/Form.css'
 import 'components/signIn/Form.css'
+
 import smiliesIcon from 'assets/images/smilies.png'
-import { useState } from 'react';
 import Paths from 'constants/paths';
+import SignIn from 'services/signIn/SignIn';
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [requestError, setRequestError] = useState(false);
+  const nav = useNavigate();  
+
+  const signIn = async () => {
+    const res: boolean | Error = await SignIn(email, password);
+
+    if(res === true) {
+      setRequestError(false);
+      nav(Paths.WELCOME);      
+    }
+    else if(res instanceof Error) {
+      setRequestError(true);
+    }
+  }
 
   return (
     <form onSubmit={e => {
       e.preventDefault();
+      signIn();
     }}
       className='main-page-form'
     >
       <div>
         <img src={smiliesIcon} alt="Two faces smiling" />
       </div>
+
+      {requestError && <p className="main-page--request-error">An error has occurred</p>}
       <p>
         <h1 className="main-page--title">TARGET MVD</h1>
         <h4 className="main-page--subtitle">Find people near you & Connect </h4>

@@ -1,0 +1,16 @@
+
+.home--main-section {
+  display: flex;
+  height: 99.8vh;
+}
+
+.home--left-panel {
+  background-color: var(--left-side-bg-color);
+  width: 26%;
+  box-shadow: var(--left-panel-box-shadow);
+}
+
+.home--map {
+  width: 99.8%;
+  margin-left: 2px;
+}

@@ -1,0 +1,19 @@
+:root {
+  --skyblue-bg-color: #2FBCF7;
+  --white-pannel-bg-color: #ffffff;
+  --submit-btn-bg-color: #000000;
+  --submit-btn-color: #ffffff;
+  --error-message-color: #red;
+  --submit-button-border: 1px solid black;
+  --left-panel-box-shadow: 3px 10px 1px lightgrey;
+}
+
+@font-face {
+  font-family: OpenSansBold;
+  src: url('../../assets/fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url('../../assets/fonts/OpenSans-Regular.ttf');
+}

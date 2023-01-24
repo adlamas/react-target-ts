@@ -25,15 +25,6 @@
   height: 100vh;
 }
 
-.main-form {
-  width: 50%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .main-section--right-side {
   background-color: var(--right-side-bg-color);
   width: 50%;
