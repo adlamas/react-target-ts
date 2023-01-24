@@ -3,7 +3,7 @@ import ovalIcon from 'assets/images/oval.png'
 
 import 'components/home/welcome/LeftPanel.css'
 
-const leftPanel = () => {
+const LeftPanel = () => {
   return(
     <div className='home--base-section'>
       <div className="home--principal-icon-row">
@@ -24,7 +24,9 @@ const leftPanel = () => {
             <img src={ovalIcon} alt="Oval icon" />
           </div>
           <div>
-            Create a  target  by clicking wherever on the map, specify  the ratio and and a topic: Travel, Dating, Music, etc.
+            <span>
+              Create a  target  by clicking wherever on the map, specify  the ratio and and a topic: Travel, Dating, Music, etc.
+            </span>
           </div>
         </p>
 
@@ -33,7 +35,9 @@ const leftPanel = () => {
             <img src={ovalIcon} alt="Oval icon" />
           </div>
           <div>
+          <span>
             <b>TARGET</b> will  start a chat whenever you’ve a match. You can always dismiss a conversation if you’re not interested.
+          </span>
           </div>
         </p>
       </div>
@@ -47,4 +51,4 @@ const leftPanel = () => {
   )
 }
 
-export default leftPanel;
+export default LeftPanel;

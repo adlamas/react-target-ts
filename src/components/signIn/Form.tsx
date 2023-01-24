@@ -2,10 +2,8 @@ import 'components/signUp/Form.css'
 import 'components/signIn/Form.css'
 
 import smiliesIcon from 'assets/images/smilies.png'
-import axios from 'axios';
 import Paths from 'constants/paths';
-import Endpoints from 'constants/endpoints';
-import storeAPITokens from 'services/signIn/SignInHeaders';
+import SignIn from 'services/signIn/SignIn';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -14,34 +12,18 @@ import { useNavigate } from 'react-router-dom';
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [requestError, setrequestError] = useState(false);
-  const nav = useNavigate();
+  const [requestError, setRequestError] = useState(false);
+  const nav = useNavigate();  
 
   const signIn = async () => {
-    const signInEndpoint: string = await `${process.env.REACT_APP_API_BASE_URL}/api/v1${Endpoints.SIGN_IN}`;
+    const res: boolean | Error = await SignIn(email, password);
 
-    try {
-      const res = await axios.post(
-        signInEndpoint,
-        { user:
-          {
-            email: email,
-            password: password
-          }
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*'
-          }}
-        );
-      
-      await storeAPITokens(res);
-      setrequestError(false);
-      nav(Paths.WELCOME);
+    if(res === true) {
+      setRequestError(false);
+      nav(Paths.WELCOME);      
     }
-    catch(error: any){
-      setrequestError(true);
+    else if(res instanceof Error) {
+      setRequestError(true);
     }
   }
 
